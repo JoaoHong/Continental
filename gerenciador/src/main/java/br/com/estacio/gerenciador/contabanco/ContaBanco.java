@@ -1,4 +1,4 @@
-package br.com.estacio.gerenciardor.contabanco;
+package br.com.estacio.gerenciador.contabanco;
 
 public class ContaBanco {
 	int numConta;

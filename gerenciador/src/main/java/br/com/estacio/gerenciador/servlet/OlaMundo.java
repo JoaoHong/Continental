@@ -1,4 +1,4 @@
-package br.com.estacio.gerenciardor.servlet;
+package br.com.estacio.gerenciador.servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
