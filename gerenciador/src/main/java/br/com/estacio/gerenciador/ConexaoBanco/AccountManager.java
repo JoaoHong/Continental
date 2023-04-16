@@ -4,7 +4,7 @@ import java.sql.*;
 
 public class AccountManager {
 	
-	public static void addContaBanco(String[] args) {
+	public static void main(String[] args) {
 		String jdbcURL = "jdbc:mysql://continentalbank.cv8y9fpum0xa.us-east-1.rds.amazonaws.com:3306/ContinentalBank";
 		String username = "admin";
 		String password = "3VAJZlkQb3AhrPCvA6jZ";
@@ -12,11 +12,11 @@ public class AccountManager {
 		try {
 			Connection connection = DriverManager.getConnection(jdbcURL, username, password);
 			
-			int numConta = 1234;
+			int numConta = 4321;
 			String tipoConta = "'CC'";
-			String donoConta = "'João Hong'";
-			double saldo = 134.84;
-			boolean status = true;
+			String donoConta = "'Jonathan Soarez'";
+			double saldo = 500.00;
+			boolean status = false;
 			
 			
 			String sqlAdd = "INSERT INTO ContaBanco (NumConta, TipoConta, DonoConta, Saldo, Status) VALUES(%s, %s , %s , %s , %s)".formatted(numConta, tipoConta, donoConta, saldo, status);
