@@ -6,49 +6,93 @@
 <meta charset="UTF-8">
 <title>Gerenciamento de contas</title>
 
-	<!--begin::Fonts-->
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700"  />
-	<!--end::Fonts-->
-
-	<!--begin::Stylesheets-->
-	<link href="~/Metronic/demo1/dist/assets/plugins/custom/fullcalendar/fullcalendar.bundle.css" rel="stylesheet" type="text/css"  />
-	<link href="~/Metronic/demo1/dist/assets/plugins/custom/datatables/datatables.bundle.css" rel="stylesheet" type="text/css"  />
-	<link href="~/Metronic/demo1/dist/assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css"  />
-	<link href="~/Metronic/demo1/dist/assets/css/style.bundle.css" rel="stylesheet" type="text/css"  />
-	<link href="~/css/Site.css" rel="stylesheet" type="text/css"  />
-	<link href="~/lib/bootstrap-datepicker/css/bootstrap-datepicker3.min.css" rel="stylesheet" type="text/css"  />
-	<!--end::Stylesheets-->
-
-	<!--begin::JQuery-->		
-	<script src="~/lib/jquery/jquery.min.js" ></script>
-	<!--end::JQuery-->
 </head>
 
 		
 <body>
 
+<div class="toolbar" id="kt_toolbar">
+	<!--begin::Container-->
+	<div id="kt_toolbar_container" class="container-fluid d-flex flex-stack">
+		<!--begin::Page title-->
+		<div data-kt-swapper="true" data-kt-swapper-mode="prepend" data-kt-swapper-parent="{default: '#kt_content_container', 'lg': '#kt_toolbar_container'}" class="page-title d-flex align-items-center flex-wrap me-3 mb-5 mb-lg-0">
+			<!--begin::Title-->
+			<h1 class="d-flex align-items-center text-dark fw-bolder fs-3 my-1">Gerenciamento</h1>
+			<!--end::Title-->
+			<!--begin::Separator-->
+			<span class="h-20px border-gray-200 border-start mx-4"></span>
+			<!--end::Separator-->
+			<!--begin::Breadcrumb-->
+			<ul class="breadcrumb breadcrumb-separatorless fw-bold fs-7 my-1">
+				<!--begin::Item-->
+				<li class="breadcrumb-item text-muted">
+					<a href="" class="text-muted text-hover-primary">Usuários</a>
+				</li>
+			</ul>
+			<!--end::Breadcrumb-->
+		</div>
+		<!--end::Page title-->
+		<!--begin::Actions-->
+
+		<!--end::Actions-->
+	</div>
+	<!--end::Container-->
+</div>
+<!--end::Toolbar-->		
+<!--begin::Post-->
+<div class="post d-flex flex-column-fluid" id="kt_post">
+	<!--begin::Container-->
+	<div id="kt_content_container" class="container-fluid">
+
+		<div class="card card-bordered">
+			<!--begin::Card header-->
+			<div class="card-header align-items-center py-3 gap-2 gap-md-5">
+				<!--begin::Card title-->
+				<div class="card-title">
+					<h3>Usuários</h3>
+				</div>
+				<!--end::Card title-->
+				<!--begin::Card toolbar-->
+				<div class="card-toolbar flex-row-fluid justify-content-end gap-5">						
+					<a href="" class="btn btn-primary">Adicionar</a>
+				</div>
+				<!--end::Card toolbar-->
+			</div>
+			<!--end::Card header-->
+			<!--begin::Card body-->
+			<div class="card-body">
+				<!--begin: Datatable-->
+				<div class="datatable-standard">
+					<table class="table table-striped table-row-bordered table-bordered gy-5 gs-20" id="kt_datatable">
+						<thead>
+							<tr class="text-uppercase">
+								<th class="text-center">Id</th>
+								<th class="text-center">Nome</th>
+								<th class="text-center">Ações</th>
+							</tr>
+						</thead>
+						<tbody>						
+							<tr>
+								<td class="text-center">@user.Id</td>
+								<td class="text-center">@user.Nome</td>
+								<td nowrap="nowrap" class="text-center">
+									<a href="" class="" title="Editar"> <i class="bi bi-pen fs-1"></i> </a>
+									<a href="" data-idElemento="@user.Id" class="btnExcluir" title="Excluir"> <i class="bi bi-trash fs-1"></i> </a>
+								</td>
+							</tr>							
+						</tbody>
+					</table>
+				</div>
+				<!--end: Datatable-->
+			</div>
+			<!--end::Card body-->				
+		</div>
+
+	</div>
+	<!--end::Container-->													
+</div>
 
 
-	<!--begin::Javascript-->
-	<script>var hostUrl = "/Metronic/demo1/dist/assets/";</script>
-	<script src="~/Metronic/demo1/dist/assets/plugins/global/plugins.bundle.js" ></script>
-	<script src="~/Metronic/demo1/dist/assets/js/scripts.bundle.js" ></script>
-	<script src="~/Metronic/demo1/dist/assets/plugins/custom/fullcalendar/fullcalendar.bundle.js" ></script>
-	<script src="~/Metronic/demo1/dist/assets/plugins/custom/datatables/datatables.bundle.js" ></script>
-	<script src="~/Metronic/demo1/dist/assets/js/widgets.bundle.js"></script>
-	<script src="~/Metronic/demo1/dist/assets/js/custom/widgets.js" ></script>
-	<script src="~/Metronic/demo1/dist/assets/js/custom/apps/chat/chat.js" ></script>				
-	<script src="~/js/Site.js" ></script>
-	<script src="~/lib/jquery.fileDownload/jquery.fileDownload.min.js" ></script>
-	<script src="~/lib/highcharts/highcharts.min.js" ></script>
-	<script src="~/lib/highcharts/modules/accessibility.min.js" ></script>
-	<script src="~/lib/highcharts/modules/export-data.min.js" ></script>
-	<script src="~/lib/highcharts/modules/exporting.min.js" ></script>
-	<script src="~/lib/highcharts/modules/funnel.min.js" ></script>
-	<script src="~/lib/highcharts/modules/no-data-to-display.min.js" ></script>
-	<script src="~/lib/select2/js/i18n/pt-BR.min.js" ></script>
-	<script src="~/lib/bootstrap-datepicker/js/bootstrap-datepicker.min.js" ></script>
-	<script src="~/lib/bootstrap-datepicker/locales/bootstrap-datepicker.pt-BR.min.js" ></script>
-	<!--end::Javascript-->
+	
 </body>
 </html>
