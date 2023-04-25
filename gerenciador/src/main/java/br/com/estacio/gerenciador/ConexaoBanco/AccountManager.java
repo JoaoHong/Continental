@@ -10,7 +10,18 @@ public class AccountManager {
 		try {
 			Connection connection = DriverManager.getConnection(jdbcURL, username, password);
 			
+<<<<<<< Updated upstream
 			String sqlAdd = "UPDATE ContaBanco SET saldo = %s WHERE numConta = %s".formatted(valorSaque, numConta);
+=======
+			int numConta = 5671;
+			String tipoConta = "'CP'";
+			String donoConta = "'Otavio Lopes'";
+			double saldo = 200.00;
+			boolean status = false;
+			
+			
+			String sqlAdd = "INSERT INTO ContaBanco (NumConta, TipoConta, DonoConta, Saldo, Status) VALUES(%s, %s , %s , %s , %s)".formatted(numConta, tipoConta, donoConta, saldo, status);
+>>>>>>> Stashed changes
 			
 			Statement statement = connection.createStatement();
 			
