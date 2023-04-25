@@ -22,7 +22,6 @@
 	%>
 	<%
 	  	String meuParametro = request.getParameter("meuParametro");
-		int numConta = request.getParameter("meuNumero");
 	 	SendingParameters minhaClasse = new SendingParameters();
 	  	minhaClasse.meuMetodo(meuParametro);
 	%>
