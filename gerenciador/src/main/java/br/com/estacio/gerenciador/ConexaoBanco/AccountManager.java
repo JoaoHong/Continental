@@ -12,9 +12,9 @@ public class AccountManager {
 		try {
 			Connection connection = DriverManager.getConnection(jdbcURL, username, password);
 			
-			int numConta = 1038;
+			int numConta = 1039;
 			String tipoConta = "'CC'";
-			String donoConta = "'Pedro Parro'";
+			String donoConta = "'Pedro A. Parro'";
 			double saldo = 600.00;
 			boolean status = false;
 			

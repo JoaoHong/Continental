@@ -5,7 +5,7 @@ public class PagarMensal {
 	private double descontaCc = 12;
 	private double descontaPp = 20;
 	
-	//construtor
+	
 	public PagarMensal(double descontaCc, double descontaPp) {
 		this.descontaCc = descontaPp;
 		this.descontaPp = descontaPp;
