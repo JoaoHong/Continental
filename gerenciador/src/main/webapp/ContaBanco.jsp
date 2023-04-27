@@ -5,94 +5,71 @@
 <head>
 <meta charset="UTF-8">
 <title>Gerenciamento de contas</title>
-
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
 </head>
 
 		
 <body>
+ <div class="container">
+      <div class="py-5 text-center">
+        <img class="d-block mx-auto mb-4" src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
+        <h2>GERENCIAMENTO DE CONTAS</h2>
+      </div>
 
-<div class="toolbar" id="kt_toolbar">
-	<!--begin::Container-->
-	<div id="kt_toolbar_container" class="container-fluid d-flex flex-stack">
-		<!--begin::Page title-->
-		<div data-kt-swapper="true" data-kt-swapper-mode="prepend" data-kt-swapper-parent="{default: '#kt_content_container', 'lg': '#kt_toolbar_container'}" class="page-title d-flex align-items-center flex-wrap me-3 mb-5 mb-lg-0">
-			<!--begin::Title-->
-			<h1 class="d-flex align-items-center text-dark fw-bolder fs-3 my-1">Gerenciamento</h1>
-			<!--end::Title-->
-			<!--begin::Separator-->
-			<span class="h-20px border-gray-200 border-start mx-4"></span>
-			<!--end::Separator-->
-			<!--begin::Breadcrumb-->
-			<ul class="breadcrumb breadcrumb-separatorless fw-bold fs-7 my-1">
-				<!--begin::Item-->
-				<li class="breadcrumb-item text-muted">
-					<a href="" class="text-muted text-hover-primary">Usuários</a>
-				</li>
-			</ul>
-			<!--end::Breadcrumb-->
-		</div>
-		<!--end::Page title-->
-		<!--begin::Actions-->
+      <div class="row">      
+        <div class="col-md-8 order-md-1">
+          <h4 class="mb-3">Abrir conta</h4>
+          <form class="needs-validation" novalidate>
+            <div class="row">
+              <div class="col-md-12 mb-3">
+                <label for="firstName">Nome completo:</label>
+                <input type="text" class="form-control" id="firstName" placeholder="" value="" required>
+                <div class="invalid-feedback">
+                  Valid first name is required.
+                </div>
+              </div>
+            </div>
 
-		<!--end::Actions-->
-	</div>
-	<!--end::Container-->
-</div>
-<!--end::Toolbar-->		
-<!--begin::Post-->
-<div class="post d-flex flex-column-fluid" id="kt_post">
-	<!--begin::Container-->
-	<div id="kt_content_container" class="container-fluid">
+            <div class="mb-3">
+              <label for="email">Email para contato:<span class="text-muted">(Opcional)</span></label>
+              <input type="email" class="form-control" id="email" placeholder="email@email.com">
+              <div class="invalid-feedback">
+                Please enter a valid email address for shipping updates.
+              </div>
+            </div>
 
-		<div class="card card-bordered">
-			<!--begin::Card header-->
-			<div class="card-header align-items-center py-3 gap-2 gap-md-5">
-				<!--begin::Card title-->
-				<div class="card-title">
-					<h3>Usuários</h3>
-				</div>
-				<!--end::Card title-->
-				<!--begin::Card toolbar-->
-				<div class="card-toolbar flex-row-fluid justify-content-end gap-5">						
-					<a href="" class="btn btn-primary">Adicionar</a>
-				</div>
-				<!--end::Card toolbar-->
-			</div>
-			<!--end::Card header-->
-			<!--begin::Card body-->
-			<div class="card-body">
-				<!--begin: Datatable-->
-				<div class="datatable-standard">
-					<table class="table table-striped table-row-bordered table-bordered gy-5 gs-20" id="kt_datatable">
-						<thead>
-							<tr class="text-uppercase">
-								<th class="text-center">Id</th>
-								<th class="text-center">Nome</th>
-								<th class="text-center">Ações</th>
-							</tr>
-						</thead>
-						<tbody>						
-							<tr>
-								<td class="text-center">@user.Id</td>
-								<td class="text-center">@user.Nome</td>
-								<td nowrap="nowrap" class="text-center">
-									<a href="" class="" title="Editar"> <i class="bi bi-pen fs-1"></i> </a>
-									<a href="" data-idElemento="@user.Id" class="btnExcluir" title="Excluir"> <i class="bi bi-trash fs-1"></i> </a>
-								</td>
-							</tr>							
-						</tbody>
-					</table>
-				</div>
-				<!--end: Datatable-->
-			</div>
-			<!--end::Card body-->				
-		</div>
+            <div class="mb-3">
+              <label for="address">CPF:</label>
+              <input type="text" class="form-control" id="address" placeholder="000.000.000-00" required>
+              <div class="invalid-feedback">
+                Please enter your shipping address.
+              </div>
+            </div>
 
-	</div>
-	<!--end::Container-->													
-</div>
+            <div class="row">
+              <div class="col-md-5 mb-3">
+                <label for="country">Tipo de conta:</label>
+                <select class="custom-select d-block w-100" id="country" required>
+                  <option value="">Selecione...</option>
+                  <option value="CC">Conta Corrente</option>
+                  <option value="CP">Conta Poupança</option>
+                </select>
+                <div class="invalid-feedback">
+                  Please select a valid country.
+                </div>
+              </div>
+            </div>
+            <hr class="mb-4">
+            <button class="btn btn-primary btn-lg btn-block" type="button">Enviar dados</button>
+          </form>
+        </div>
+      </div>
 
-
+      <footer class="my-5 pt-5 text-muted text-center text-small">
+        <p class="mb-1">&copy; 2023 : Continental Bank</p>
+      </footer>
+    </div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 	
 </body>
 </html>

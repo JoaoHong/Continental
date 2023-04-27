@@ -1,7 +1,6 @@
 package br.com.estacio.gerenciador.contabanco;
 
 
-
 public class AbrirConta{
 	public static void mainAbrirConta(String[] args) {
 		ContaBanco resContaBanco = new ContaBanco();
