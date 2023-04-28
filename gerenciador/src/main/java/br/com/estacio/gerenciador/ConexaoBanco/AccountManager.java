@@ -28,7 +28,7 @@ public class AccountManager {
 		}
 	}
 	
-	public static void sacar(int numConta, double saldo) {
+	public void sacar(String numConta, String saldo) {
 		String jdbcURL = "jdbc:mysql://continentalbank.cv8y9fpum0xa.us-east-1.rds.amazonaws.com:3306/ContinentalBank";
 		String username = "admin";
 		String password = "3VAJZlkQb3AhrPCvA6jZ";
