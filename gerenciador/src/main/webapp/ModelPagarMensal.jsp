@@ -41,6 +41,20 @@ input[type=number] {
 	                 Número da conta é obrigatorio.
 	               </div>
 	             </div>
+	             <div class="col-md-3 mb-3">
+	               <label for="firstName">Conta a ser pagar:</label>
+	               <input type="text" class="form-control" name="contaPaga" id="contaPaga" placeholder="Conta a ser paga" required>
+	               <div class="invalid-feedback">
+	                 Qual a conta é obrigatorio.
+	               </div>
+	             </div>
+	             <div class="col-md-3 mb-3">
+	               <label for="firstName">Valor:</label>
+	               <input type="text" class="form-control" name="valorConta" id="valorConta" placeholder="Valor a ser pago" required>
+	               <div class="invalid-feedback">
+	                 Valor da conta é obrigatorio.
+	               </div>
+	             </div>
 
 			</div>
             <hr class="mb-4">

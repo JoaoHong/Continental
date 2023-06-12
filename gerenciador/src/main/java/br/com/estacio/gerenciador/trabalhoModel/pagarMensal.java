@@ -25,6 +25,8 @@ public class pagarMensal extends HttpServlet{
 		
 		PrintWriter out = resp.getWriter();
 		String numConta = req.getParameter("numConta");
+		String contaPga = req.getParameter("contaPaga");
+		String valorPagar = req.getParameter("valorConta"); 
 		
 		try {
 			Connection connection = DriverManager.getConnection(jdbcURL, username, password);
@@ -57,20 +59,27 @@ public class pagarMensal extends HttpServlet{
 					}else {
 						valorMensal = 0.00;
 					}
+					
+					double valorPagar1 = Double.parseDouble(valorPagar);
 										
 					double valorSaldo = Double.parseDouble(saldoConta);
-					
-					double resultadoSaldo = valorSaldo - valorMensal;
-					
-					String sqlPagarMensal = "UPDATE ContaBanco SET Saldo = %s WHERE NumConta = %s".formatted(resultadoSaldo, numConta);
-					
-					Statement statement = connection.createStatement();
-					
-					int rows = statement.executeUpdate(sqlPagarMensal);
-					
-					if (rows > 0){
-						out.println("Mensalidade paga com sucesso! Seu novo saldo é: " + resultadoSaldo);
+					if(valorSaldo > valorMensal + valorPagar1) {
+						double resultadoSaldo = valorSaldo - valorMensal - valorPagar1;
+						
+						String sqlPagarMensal = "UPDATE ContaBanco SET Saldo = %s WHERE NumConta = %s".formatted(resultadoSaldo, numConta);
+						
+						Statement statement = connection.createStatement();
+						
+						int rows = statement.executeUpdate(sqlPagarMensal);
+						
+						if (rows > 0){
+							out.println("Mensalidade. " +contaPga+ " paga com sucesso! Seu novo saldo é: " + resultadoSaldo);
+						}
+					}else {
+						out.println("Saldo insuficiente pra pagar conta. Saldo atual: R$" + valorSaldo + ".");
+						out.println("O seu tipo de conta faz uma cobrança de R$ " + valorMensal + " por transação.");
 					}
+					
 					
 					connection.close();
 				}else {
